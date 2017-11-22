@@ -68,6 +68,7 @@ public class MyServerWriterInterceptor implements WriterInterceptor {
 
             @Override
             public void close() throws IOException {
+                write("-swi".getBytes()); // append marker
                 System.out.println("MyServerWriterInterceptor --> " + baos.toString());
                 super.close();
             }

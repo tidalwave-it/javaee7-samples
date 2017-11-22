@@ -63,7 +63,8 @@ public class MyServerReaderInterceptor implements ReaderInterceptor {
         while ((c = old.read()) != -1) {
             baos.write(c);
         }
-        System.out.println("MyClientReaderInterceptor --> " + baos.toString());
+        baos.write("-sri".getBytes()); // append marker
+        System.out.println("MyServerReaderInterceptor --> " + baos.toString());
 
         ric.setInputStream(new ByteArrayInputStream(baos.toByteArray()));
 

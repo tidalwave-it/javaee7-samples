@@ -80,6 +80,8 @@ public class MyClientReaderInterceptor implements ReaderInterceptor {
         while ((c = old.read()) != -1) {
             baos.write(c);
         }
+
+        baos.write("-cri".getBytes()); // append marker
         System.out.println("MyClientReaderInterceptor --> " + baos.toString());
 
         ric.setInputStream(new ByteArrayInputStream(baos.toByteArray()));

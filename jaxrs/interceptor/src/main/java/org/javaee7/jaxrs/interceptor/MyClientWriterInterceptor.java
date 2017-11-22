@@ -68,20 +68,11 @@ public class MyClientWriterInterceptor implements WriterInterceptor {
 
             @Override
             public void close() throws IOException {
+                write("-cwi".getBytes()); // append marker
                 System.out.println("MyClientWriterInterceptor --> " + baos.toString());
                 super.close();
             }
         });
-
-        //        wic.setOutputStream(new FilterOutputStream(wic.getOutputStream()) {
-        //            
-        //            @Override
-        //            public void write(int b) throws IOException {
-        //                System.out.println("**** "  + (char)b);
-        //                super.write(b);
-        //            }
-        //            
-        //        });
 
         wic.proceed();
     }
