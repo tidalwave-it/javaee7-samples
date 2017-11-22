@@ -23,7 +23,7 @@ public class MyAsyncBeanClassLevel {
         } catch (InterruptedException ex) {
             Logger.getLogger(MyAsyncBeanClassLevel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return new AsyncResult(n1 + n2);
+        return new AsyncResult<Integer>(n1 + n2);
     }
 
 }
