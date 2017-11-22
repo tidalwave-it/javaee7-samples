@@ -50,7 +50,7 @@ import javax.inject.Named;
 public class MyItemWriter extends AbstractItemWriter {
 
     @Override
-    public void writeItems(List list) {
+    public void writeItems(List<Object> list) {
         System.out.println("writeItems: " + list);
     }
 }
